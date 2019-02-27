@@ -5,8 +5,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "Terminus (TTF):pixelsize=17" };
+static const char dmenufont[]       = "Terminus (TTF):pixelsize=17";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -28,6 +28,9 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "mpv",      NULL,       NULL,       0,            1,           -1 },
+	{ "feh",      NULL,       NULL,       0,            1,           -1 },
+	{ "sxiv",      NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
@@ -47,6 +50,11 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod4Mask
+#define XF86AudioLowerVolume  0x1008ff11
+#define XF86AudioRaiseVolume  0x1008ff13
+#define XF86AudioMute         0x1008ff12
+#define XF86MonBrightnessDown 0x1008ff03
+#define XF86MonBrightnessUp   0x1008ff02
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -62,6 +70,11 @@ static const char *dmenucmd[] = { "rofi", "-show", "run", NULL };
 static const char *termcmd[]  = { "termite", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "termite", "-t", scratchpadname,  NULL };
+static const char *brup[] = { "xbacklight", "+5",  NULL };
+static const char *brdown[] = { "xbacklight", "-5",  NULL };
+static const char *volup[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1000", NULL };
+static const char *voldown[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1000", NULL };
+static const char *voltoggle[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK", "toggle", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -90,6 +103,11 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+  { 0,                            XF86MonBrightnessDown, spawn,  {.v = brdown } },
+  { 0,                            XF86MonBrightnessUp, spawn,  {.v = brup } },
+  { 0,                            XF86AudioLowerVolume, spawn, {.v = voldown } },
+  { 0,                            XF86AudioRaiseVolume, spawn, {.v = volup } },
+  { 0,                            XF86AudioMute, spawn,      {.v = voltoggle } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
