@@ -37,7 +37,7 @@ static const Rule rules[] = {
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 #include "layouts.c"
 static const Layout layouts[] = {
@@ -67,9 +67,9 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "rofi", "-show", "run", NULL };
-static const char *termcmd[]  = { "termite", NULL };
+static const char *termcmd[]  = { "urxvtc", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "termite", "-t", scratchpadname,  NULL };
+static const char *scratchpadcmd[] = { "urxvtc", "--geometry", "70x29", "-T", scratchpadname,  NULL };
 static const char *brup[] = { "xbacklight", "+5",  NULL };
 static const char *brdown[] = { "xbacklight", "-5",  NULL };
 static const char *volup[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1000", NULL };
