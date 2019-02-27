@@ -5,8 +5,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Terminus (TTF):pixelsize=17" };
-static const char dmenufont[]       = "Terminus (TTF):pixelsize=17";
+static const char *fonts[]          = { "Terminus (TTF):pixelsize=28" };
+static const char dmenufont[]       = "Terminus (TTF):pixelsize=28";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -69,7 +69,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "rofi", "-show", "run", NULL };
 static const char *termcmd[]  = { "urxvtc", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "urxvtc", "--geometry", "70x29", "-T", scratchpadname,  NULL };
+static const char *scratchpadcmd[] = { "urxvtc", "-geometry", "70x20", "-T", scratchpadname,  NULL };
 static const char *brup[] = { "xbacklight", "+5",  NULL };
 static const char *brdown[] = { "xbacklight", "-5",  NULL };
 static const char *volup[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1000", NULL };
