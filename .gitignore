@@ -1,3 +1,4 @@
+config.def.h
 drw.o
 dwm
 dwm.o

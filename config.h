@@ -77,6 +77,7 @@ static const char *voldown[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "
 static const char *voltoggle[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK", "toggle", NULL };
 static const char *lockcmd[] = { "slock", NULL };
 static const char *clipshow[] = { "clipmenu", "-i", "-fn", dmenufont, NULL };
+static const char *clippaste[] = { "paste4dwm", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -106,6 +107,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
   { MODKEY,                       XK_F12,    spawn,          {.v = lockcmd } },
+  { MODKEY,                       XK_y,    spawn,          {.v = clippaste } },
   { 0,                            XF86MonBrightnessDown, spawn,  {.v = brdown } },
   { 0,                            XF86MonBrightnessUp, spawn,  {.v = brup } },
   { 0,                            XF86AudioLowerVolume, spawn, {.v = voldown } },
