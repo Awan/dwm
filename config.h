@@ -55,6 +55,7 @@ static const Layout layouts[] = {
 #define XF86AudioMute         0x1008ff12
 #define XF86MonBrightnessDown 0x1008ff03
 #define XF86MonBrightnessUp   0x1008ff02
+#define Insert                0xff63
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -113,6 +114,7 @@ static Key keys[] = {
   { 0,                            XF86AudioLowerVolume, spawn, {.v = voldown } },
   { 0,                            XF86AudioRaiseVolume, spawn, {.v = volup } },
   { 0,                            XF86AudioMute, spawn,      {.v = voltoggle } },
+  { 0,                            Insert,    spawn,          {.v = clippaste } },
 	{ MODKEY,                       XK_e,      spawn,       {.v = clipshow } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+
+selection=$(xsel -b)
+
+echo $selection 
+	
