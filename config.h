@@ -113,6 +113,7 @@ static Key keys[] = {
   { 0,                            XF86AudioLowerVolume, spawn, {.v = voldown } },
   { 0,                            XF86AudioRaiseVolume, spawn, {.v = volup } },
   { 0,                            XF86AudioMute, spawn,      {.v = voltoggle } },
+  { 0,                            Insert,    spawn,          {.v = clippaste } },
 	{ MODKEY,                       XK_e,      spawn,       {.v = clipshow } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
