@@ -50,7 +50,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod4Mask
+#define MODKEY Mod1Mask
 #define XF86AudioLowerVolume  0x1008ff11
 #define XF86AudioRaiseVolume  0x1008ff13
 #define XF86AudioMute         0x1008ff12
