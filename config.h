@@ -6,12 +6,12 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappx     = 11;       /* gaps between tags */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Terminus (TTF):pixelsize=22" };
+static const char *fonts[]          = { "Terminus (TTF):pixelsize=17" };
 static const char dmenufont[]       = "Terminus (TTF):pixelsize=22";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
+static const char col_gray1[]       = "#24292A";
+static const char col_gray2[]       = "#ff00ff";
+static const char col_gray3[]       = "#ccd2be";
+static const char col_gray4[]       = "#ff0000";
 static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -77,9 +77,9 @@ static const char *brdown[] = { "xbacklight", "-5",  NULL };
 static const char *volup[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1000", NULL };
 static const char *voldown[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1000", NULL };
 static const char *voltoggle[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK", "toggle", NULL };
-static const char *lockcmd[] = { "slock", NULL };
 static const char *clipshow[] = { "clipmenu", "-i", "-fn", dmenufont, NULL };
 static const char *clippaste[] = { "paste4dwm", NULL };
+static const char *lock[] = { "slock", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -108,8 +108,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-  { MODKEY,                       XK_F12,    spawn,          {.v = lockcmd } },
-  { MODKEY,                       XK_y,    spawn,          {.v = clippaste } },
   { 0,                            XF86MonBrightnessDown, spawn,  {.v = brdown } },
   { 0,                            XF86MonBrightnessUp, spawn,  {.v = brup } },
   { 0,                            XF86AudioLowerVolume, spawn, {.v = voldown } },
@@ -117,6 +115,7 @@ static Key keys[] = {
   { 0,                            XF86AudioMute, spawn,      {.v = voltoggle } },
   { 0,                            Insert,    spawn,          {.v = clippaste } },
 	{ MODKEY,                       XK_e,      spawn,       {.v = clipshow } },
+	{ MODKEY,                       XK_x,      spawn,       {.v = lock } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
