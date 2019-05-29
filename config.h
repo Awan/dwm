@@ -65,6 +65,7 @@ static const Layout layouts[] = {
 #define XF86MonBrightnessDown 0x1008ff03
 #define XF86MonBrightnessUp   0x1008ff02
 #define Insert                0xff63
+#define XF86LaunchA           0x1008ff4a
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -88,6 +89,7 @@ static const char *voltoggle[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "
 static const char *lockcmd[] = { "lock", NULL };
 static const char *clipshow[] = { "clipmenu", "-i", "-fn", dmenufont, NULL };
 static const char *clippaste[] = { "paste4dwm", NULL };
+static const char *music[] = { "mpc", "toggle", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -126,6 +128,7 @@ static Key keys[] = {
   { 0,                            XF86AudioRaiseVolume, spawn, {.v = volup } },
   { 0,                            XF86AudioMute, spawn,      {.v = voltoggle } },
   { 0,                            Insert,    spawn,          {.v = clippaste } },
+  { 0,                            XF86LaunchA, spawn, {.v = music } },
 	{ MODKEY,                       XK_e,      spawn,       {.v = clipshow } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
