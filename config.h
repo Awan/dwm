@@ -35,11 +35,10 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "mpv",      NULL,       NULL,       0,            1,           -1 },
 	{ "mpv",     "webcam",  "webcam",    0,            1,           -1 },
-	{ "Google-chrome",     NULL,  "Facebook Call",    0,      1,     -1 },
+	{ "Google-chrome",     NULL,  "Facebook Call",    0,            1,           -1 },
 	{ "feh",      NULL,       NULL,       0,            1,           -1 },
 	{ "sxiv",      NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "jetbrains-pycharm-ce", "jetbrains-pycharm-ce", NULL, 0, 1,   -1},
 };
 
 /* layout(s) */
