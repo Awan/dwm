@@ -66,6 +66,12 @@ static const Layout layouts[] = {
 #define XF86MonBrightnessUp   0x1008ff02
 #define Insert                0xff63
 #define XF86LaunchA           0x1008ff4a
+#define XF86Back              0x1008ff26
+#define XF86Forward           0x1008ff27
+#define XF86Reload            0x1008ff73
+#define XF86HomePage          0x1008ff18
+#define XF86Search            0x1008ff1b
+#define XF86Mail              0x1008ff19
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -90,6 +96,9 @@ static const char *lockcmd[] = { "lock", NULL };
 static const char *clipshow[] = { "clipmenu", "-i", "-fn", dmenufont, NULL };
 static const char *clippaste[] = { "paste4dwm", NULL };
 static const char *music[] = { "mpc", "toggle", NULL };
+static const char *seekbackward[] =  { "mpc", "seek", "-100", NULL };
+static const char *seekforward[] = { "mpc", "seek", "+100", NULL };
+static const char *mail[] = { "urxvtc", "-e", "mutt", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -129,6 +138,9 @@ static Key keys[] = {
   { 0,                            XF86AudioMute, spawn,      {.v = voltoggle } },
   { 0,                            Insert,    spawn,          {.v = clippaste } },
   { 0,                            XF86LaunchA, spawn, {.v = music } },
+  { 0,                            XF86Forward, spawn, {.v = seekforward } },
+  { 0,                            XF86Back, spawn,  {.v = seekbackward } },
+  { 0,                            XF86Mail, spawn,  {.v = mail } },
 	{ MODKEY,                       XK_e,      spawn,       {.v = clipshow } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
