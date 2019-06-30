@@ -99,6 +99,7 @@ static const char *music[] = { "mpc", "toggle", NULL };
 static const char *seekbackward[] =  { "mpc", "seek", "-100", NULL };
 static const char *seekforward[] = { "mpc", "seek", "+100", NULL };
 static const char *mail[] = { "urxvtc", "-e", "mutt", NULL};
+static const char *tmenu[] = { "urxvtc", "-e", "tmux", "attach", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -130,6 +131,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+  { MODKEY|ShiftMask,             XK_t,    spawn,          {.v = tmenu } }, 
   { MODKEY,                       XK_x,    spawn,          {.v = lockcmd } },
   { 0,                            XF86MonBrightnessDown, spawn,  {.v = brdown } },
   { 0,                            XF86MonBrightnessUp, spawn,  {.v = brup } },
