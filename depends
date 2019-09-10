@@ -2,6 +2,7 @@
 #
 # debian
 
-sudo apt install libx11-dev libxft-dev libxinerama-dev  libxrandr-dev -y
+sudo apt install xorg rxvt-unicode libx11-dev libxft-dev libxinerama-dev
+xbindkeys libxrandr-dev -y
 
 # I didn't try without xbacklight for brightness, but I hope we can enable light keys without that. 
