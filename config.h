@@ -10,8 +10,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Terminus (TTF):pixelsize=17" };
-static const char dmenufont[]       = "Terminus (TTF):pixelsize=22";
+static const char *fonts[]          = {"-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1","-*-tamsyn-medium-r-normal-*-12-*-*-*-*-*-*-1"};
+static const char dmenufont[]       = { '-*-tamsyn-medium-r-normal-*-12-*-*-*-*-*-*-1','-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1' };
 static const char col_gray1[]       = "#24292A";
 static const char col_gray2[]       = "#ff00ff";
 static const char col_gray3[]       = "#ccd2be";
